@@ -16,6 +16,7 @@
     "jade": "~1.11.0",
     "mongodb": "^2.0.43",
     "morgan": "~1.6.1",
+    "pmpsdk": "0.0.7",
     "serve-favicon": "~2.3.0"
   }
 }

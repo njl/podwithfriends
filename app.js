@@ -7,13 +7,15 @@ var bodyParser = require('body-parser');
 var layouts = require('express-ejs-layouts');
 var envdir = require('envdir');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
-
 // load seeeeeeeecrets
 envdir.core.environment.load('secrets');
+
+// controllers
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var podcasts = require('./routes/podcasts');
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +31,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+// routing
 app.use('/', routes);
+app.use('/podcasts', podcasts);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -47,6 +51,7 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
+      status: err.status || 500,
       message: err.message,
       error: err
     });
@@ -58,6 +63,7 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
+    status: err.status || 500,
     message: err.message,
     error: {}
   });
