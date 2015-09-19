@@ -5,16 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var layouts = require('express-ejs-layouts');
+var envdir = require('envdir');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
+// load seeeeeeeecrets
+envdir.core.environment.load('secrets');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('layout', 'layout')
+app.set('layout', 'layout');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
