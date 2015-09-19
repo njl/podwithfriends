@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 var layouts = require('express-ejs-layouts');
 var envdir = require('envdir');
 
+// global includes
+GLOBAL._ = require('underscore');
+GLOBAL.async = require('async');
+
 // load seeeeeeeecrets
 envdir.core.environment.load('secrets');
 
