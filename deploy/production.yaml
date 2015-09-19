@@ -1,0 +1,33 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+
+    #System Packages
+    - apt: upgrade=dist update_cache=yes
+    - apt: pkg={{item}} state=latest
+      with_items:
+        - supervisor
+        - git
+        - htop
+        - build-essential
+        - mongodb
+        - node
+
+    #Services
+    - service: name=supervisor state=started
+    - template: src=supervisor.conf
+                dest=/etc/supervisor/conf.d/podwithfriends.conf
+      notify: restart supervisor
+
+    #Repo
+    - file: path=/opt/podwithfriends state=directory owner=root group=root
+    - git: repo=git@github.com:njl/podwithfriends.git
+            dest=/opt/podwithfriends accept_hostkey=True force=True
+      notify: restart podwithfriends
+    - supervisorctl: name=podwithfriends state=started
+
+
+  handlers:
+    - name: restart podwithfriends
+      supervisorctl: name=podwithfriends state=restarted
