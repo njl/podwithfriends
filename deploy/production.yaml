@@ -29,6 +29,7 @@
     - git: repo=git@github.com:njl/podwithfriends.git
             dest=/opt/podwithfriends accept_hostkey=True force=True
       notify: restart podwithfriends
+    - npm: path=/opt/podwithfriends state=present
     #- supervisorctl: name=podwithfriends state=started
 
     #Map port
