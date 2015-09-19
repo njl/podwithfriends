@@ -12,22 +12,29 @@
         - htop
         - build-essential
         - mongodb
-        - node
+        - nodejs
+        - npm
 
     #Services
-    - service: name=supervisor state=started
     - template: src=supervisor.conf
                 dest=/etc/supervisor/conf.d/podwithfriends.conf
       notify: restart supervisor
+    - service: name=supervisor state=started
+    - file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
 
     #Repo
     - file: path=/opt/podwithfriends state=directory owner=root group=root
     - git: repo=git@github.com:njl/podwithfriends.git
             dest=/opt/podwithfriends accept_hostkey=True force=True
       notify: restart podwithfriends
-    - supervisorctl: name=podwithfriends state=started
+    #- supervisorctl: name=podwithfriends state=started
 
+    #Map port
+    - command: iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
 
   handlers:
     - name: restart podwithfriends
       supervisorctl: name=podwithfriends state=restarted
+    - name: restart supervisor 
+      service: name=supervisor state=restarted
+
