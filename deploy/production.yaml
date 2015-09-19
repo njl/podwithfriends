@@ -14,8 +14,10 @@
         - mongodb
         - nodejs
         - npm
+        - mongodb
 
     #Services
+    - service: name=mongodb state=started
     - template: src=supervisor.conf
                 dest=/etc/supervisor/conf.d/podwithfriends.conf
       notify: restart supervisor
