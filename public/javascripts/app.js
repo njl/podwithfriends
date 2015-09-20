@@ -12,7 +12,7 @@ function progress(curTime, timetotal, $element) {
         setTimeout(function() {
         	curTime++;
             progress(curTime, timetotal, $element);
-        }, 1);
+        }, 1000);
     }
 };
 
