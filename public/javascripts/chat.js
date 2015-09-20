@@ -19,19 +19,12 @@ $(document).ready(function(){
     socket.on('voice_token', function(data){
         var session = OT.initSession(data.api_key, data.session_id);
         session.connect(data.token, function(err){
-        var publisher = OT.initPublisher('publisher', {
-            insertMode: 'append',
-            width: '10%',
-            height: '10%'
-        });
+        var publisher = OT.initPublisher($('#me-on-video').get(0));
         session.publish(publisher);
         session.on('streamCreated', function(event) {
             console.log('stream created');
-            session.subscribe(event.stream, 'subscriber', {
-                    insertMode: 'append',
-                        width: '20%',
-                            height: '20%'
-                                    });
+            session.subscribe(event.stream, $('#others-on-video').get(0), {insertMode: 'append', 
+                                                                            audioVolume: 50})
         });
 
             console.log('connect error', err);
