@@ -2,35 +2,51 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-weight:300;
 }
-h1, h2, h3 {
+h1, h2, h3, p, a{
 	font-weight:100;
-	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+}
+h1 {
+	text-align: center;
+}
+p {
+	font-weight: 300;
 }
 header,
 main,
 section {
 	padding:2em;
 }
+ul {
+	margin:0;
+}
+li {
+	list-style: none;
+}
 input {
 	padding:1em;
 	width:100%;
 }
+.button,
+.button:hover {
+	color:#333;
+	background: #fd0;
+}
+/* landing */
 .podcast-container {
 	padding:1em;
 }
+.podcast-container .podcast-title {
+	text-align:center;
+	margin-top:25px;
+}
+
 .podcast {
 	position: relative;
 	padding:1em;
 	height:200px;
 	border:1px solid #fd0;
-}
-.people-count {
-	position: absolute;
-	top:5px;
-	left:5px;
-	z-index:1000;
 }
 .people-count:after {
 	/* will be replaced by pictures */
@@ -42,9 +58,52 @@ input {
 	left:0px;
 	width:100%;
 }
-
-.podcast-timeline .time-bar {
-	height:10px;
-	background:#81B4B9;
+.podcast-timeline .time-bar{
+	position:relative;
 	width:0%;
+	background:#81B4B9;
+	height:10px;
+}
+
+
+
+.button,
+.button:hover {
+	color:#333;
+	background: #fd0;
+}
+
+/* show page */
+.users {
+	position:relative;
+}
+.users .row {
+	padding:2em;
+	border-bottom:1px solid #eee;
+}
+.users .row:first-child {
+	padding-top:0;
+}
+.users .row:last-child {
+	border-bottom: 0;
+}
+.show {
+	border:1px solid #fd0;
+}
+.show p {
+	text-align: center;
+}
+.listener-all li {
+	display:inline-block;
+	margin:0 1em;
+}
+.listener-avatar img {
+	height:40px;
+	height:40px;
+	border-radius:50%;
+}
+footer {
+	position:absolute;
+	bottom:0;
+	text-align: center;
 }

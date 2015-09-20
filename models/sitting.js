@@ -16,6 +16,10 @@ var SittingSchema = new mongoose.Schema({
     image_thumb_url: String,
     image_full_url: String
   },
+  users: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserSchema'
+  }],
   user_ids: [String]
 });
 
