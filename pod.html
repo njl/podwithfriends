@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pod with Friends</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+	<link href='https://fonts.googleapis.com/css?family=Lato:100,400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" />
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+	<main>
+		<!-- show -->
+		<section class="show medium-4 columns">
+			<img class="show-logo" src="img/this.png"/>
+			<div class="show-info">
+				<p class="show-name">This American Life</p>
+				<p class="show-episode">Episode 532 the Magic Words</p>
+				<input class="show-timeline" type="range" min="0" max="200" value="60" step="1">
+			</div>
+		</section>
+		<!-- people -->
+		<section class="users medium-8 columns">
+			<ul class="listener-all row">
+				<h3>People listening to this episode</h3>
+				<li>
+					<div class="listener-avatar">
+						<img src="img/avatar1.png"/>
+					</div>
+					<div class="listener-name">Wino</div>
+				</li>
+				<li>
+					<div class="listener-avatar">
+						<img src="img/avatar2.png"/>
+					</div>
+					<div class="listener-name">Yuno</div>
+				</li>
+				<li>
+					<div class="listener-avatar">
+						<img src="img/avatar3.png"/>
+					</div>
+					<div class="listener-name">Blue</div>
+				</li>
+				<li>
+					<div class="listener-avatar">
+						<img src="img/avatar4.png"/>
+					</div>
+					<div class="listener-name">Saddy</div>
+				</li>
+			</ul>
+			<!-- user activity -->
+			<div class="activity row">
+				<h3>Chat</h3>
+				<div class="chat-block">
+					<div class="listener-avatar">
+						<img src="img/avatar2.png"/>
+					</div>
+					<!-- TODO -->
+					<div class="audio-chat">
+						<div class="mute">mute button</div>
+					</div>
+					<div class="text-chat">
+						<div class="loader">... a loader indicating when the user is typing</div>
+						<div class="text">actual text once user posts</div>
+					</div>
+				</div>
+			</div>
+			<div class="chat row">
+				<div class="small-2 columns listener-avatar">
+					<img src="img/avatar2.png"/>
+				</div>
+				<input class="small-10 columns" type="text" placeholder="What are you thinking" />
+			</div>
+		</section>
+		<a href="#" class="button expand">Take me to another pod</a>
+	</main>
+<!-- 	<footer class="medium-12 columns">
+		<small>Microphone by Tim Boelaars from the Noun Project</small>
+	</footer> -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>

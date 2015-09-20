@@ -27,14 +27,24 @@ input {
 	border:1px solid #fd0;
 }
 .people-count {
-	/*position: absolute;*/
+	position: absolute;
+	top:5px;
+	left:5px;
+	z-index:1000;
 }
 .people-count:after {
 	/* will be replaced by pictures */
 	content:' img of people';
 }
-.podcast-timeline input {
-	position: relative;
-	top:100px;
+.podcast-timeline {
+	position:absolute;
+	bottom:0px;
+	left:0px;
 	width:100%;
+}
+
+.podcast-timeline .time-bar {
+	height:10px;
+	background:#81B4B9;
+	width:0%;
 }

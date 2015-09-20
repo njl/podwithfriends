@@ -2,21 +2,38 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-weight:300;
 }
-h1, h2, h3 {
+h1, h2, h3, p, a{
 	font-weight:100;
-	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+}
+h1 {
+	text-align: center;
+}
+p {
+	font-weight: 300;
 }
 header,
 main,
 section {
 	padding:2em;
 }
+ul {
+	margin:0;
+}
+li {
+	list-style: none;
+}
 input {
 	padding:1em;
 	width:100%;
 }
+.button,
+.button:hover {
+	color:#333;
+	background: #fd0;
+}
+/* landing */
 .podcast-container {
 	padding:1em;
 }
@@ -25,9 +42,6 @@ input {
 	padding:1em;
 	height:200px;
 	border:1px solid #fd0;
-}
-.people-count {
-	/*position: absolute;*/
 }
 .people-count:after {
 	/* will be replaced by pictures */
@@ -38,11 +52,14 @@ input {
 	top:100px;
 	width:100%;
 }
+<<<<<<< HEAD
 .button,
 .button:hover {
 	color:#333;
 	background: #fd0;
 }
+=======
+>>>>>>> 5d8e89b4872746cf6f7d0890618789e5e8ff5ea6
 
 /* show page */
 .users {
