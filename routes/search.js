@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var api = require('../lib/pmp');
+var api = require('../lib/api');
 
 router.get('/', function(req, res, next) {
   api.query(req.query.q, req.query.p || 1, function(err, data) {

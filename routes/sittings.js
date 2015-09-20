@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Sitting = require('../models/sitting');
 
-var api = require('../lib/audiosearch'); // require('../lib/pmp');
+var api = require('../lib/api');
 
 router.get('/chat', function(req, res, next){
   res.render('chat');
