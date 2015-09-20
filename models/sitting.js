@@ -19,7 +19,7 @@ var SittingSchema = new mongoose.Schema({
   users: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'UserSchema'
-  }]
+  }],
   user_ids: [String]
 });
 

@@ -7,8 +7,8 @@
 	<section class="show medium-4 columns">
 		<img class="show-logo" src="/images/this.png"/>
 		<div class="show-info">
-			<p class="show-name"><%= sitting.podcast.title %></p>
-			<p class="show-episode">Episode 532 the Magic Words</p>
+			<p class="show-name"><%= sitting.podcast.show_title %></p>
+			<p class="show-episode"><%= sitting.podcast.title %></p>
 			<input class="show-timeline" type="range" min="0" max="200" value="60" step="1">
 		</div>
 	</section>
@@ -16,30 +16,14 @@
 	<section class="users medium-8 columns">
 		<ul class="listener-all row">
 			<h3>People listening to this episode</h3>
-			<li>
+			<% sitting.users.forEach(function(user) { %>
+			<li class="listener-grid-li" id="<%=user._id%>">
 				<div class="listener-avatar">
-					<img src="/images/avatar1.png"/>
+					<!--<img src="/images/avatar1.png"/>-->
 				</div>
-				<div class="listener-name">Wino</div>
+				<div class="listener-name"><%=user.username%></div>
 			</li>
-			<li>
-				<div class="listener-avatar">
-					<img src="/images/avatar2.png"/>
-				</div>
-				<div class="listener-name">Yuno</div>
-			</li>
-			<li>
-				<div class="listener-avatar">
-					<img src="/images/avatar3.png"/>
-				</div>
-				<div class="listener-name">Blue</div>
-			</li>
-			<li>
-				<div class="listener-avatar">
-					<img src="/images/avatar4.png"/>
-				</div>
-				<div class="listener-name">Saddy</div>
-			</li>
+			<% }); %>
 		</ul>
 		<!-- user activity -->
 		<div class="activity row">
