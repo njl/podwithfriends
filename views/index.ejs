@@ -14,7 +14,9 @@
 	<section class="search">
 		<h3>Anything you want to listen to?</h3>
 		<div class="medium-centered medium-6 columns">
-			<input type="text" placeholder="Some awesome show I heard about from friends" />
+		  <form method="GET" action="/search">
+				<input name="q" type="text" placeholder="Some awesome show I heard about from friends" />
+			</form>
 		</div>
 		<!-- <a id="submit" href="#" class="button">Take me there</a> -->
 	</section>
