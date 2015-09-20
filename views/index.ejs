@@ -37,6 +37,9 @@
 		<% sittings.forEach(function(sitting) { %>
 			<li class="podcast-container">
 				<div class="podcast">
+					<div class="play_border">
+    					<div class="play_button"></div>
+    				</div>
 					<div class="people-count"><%= sitting.user_ids.length %></div>
 					<div class="podcast-title"><a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a></div>
 					<div class="podcast-timeline">
