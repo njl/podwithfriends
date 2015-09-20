@@ -127,6 +127,9 @@ p.nav-text{
 	background: #fd0;
 }
 /* landing */
+.search h3 {
+	text-align:center;
+}
 .podcast-container {
 	padding:1em;
 }
@@ -135,10 +138,6 @@ p.nav-text{
 	padding:1em;
 	height:200px;
 	border:1px solid #fd0;
-}
-.people-count:after {
-	/* will be replaced by pictures */
-	content:' current listeners';
 }
 .button,
 .button:hover {
