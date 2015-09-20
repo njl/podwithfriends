@@ -80,7 +80,7 @@ p.nav-text{
 .play_border {
     position: absolute;
     margin-left: 35%;
-    margin-top: 25%;
+    margin-top: 40%;
     border: 1px solid rgba(0,0,0,0.3);
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -186,10 +186,6 @@ footer {
 	padding:1em;
 	height:200px;
 	border:1px solid #fd0;
-}
-.people-count:after {
-	/* will be replaced by pictures */
-	content:' img of people';
 }
 .podcast-timeline, .show-timeline {
 	position:absolute;

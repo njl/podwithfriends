@@ -4,17 +4,17 @@
   tasks:
 
     #System Packages
-    - apt: upgrade=dist update_cache=yes
-    - apt: pkg={{item}} state=latest
-      with_items:
-        - supervisor
-        - git
-        - htop
-        - build-essential
-        - mongodb
-        - nodejs
-        - npm
-        - mongodb
+    #- apt: upgrade=dist update_cache=yes
+    #- apt: pkg={{item}} state=latest
+    #  with_items:
+    #    - supervisor
+    #    - git
+    #    - htop
+    #    - build-essential
+    #    - mongodb
+    #    - nodejs
+    #    - npm
+    #    - mongodb
 
     #Services
     - service: name=mongodb state=started

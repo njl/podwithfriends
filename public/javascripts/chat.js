@@ -5,7 +5,7 @@ var start_chat = function(hostname, name, room_id){
     });
     var chat_window = $('.text-chat');
     socket.on('said', function(data){
-        chat_window.append('<div class="text"><strong>'+data.user+'</strong> '+data.txt+'</div>');
+        chat_window.append('<div class="text"><strong>'+_.escape(data.user)+'</strong> '+_.escape(data.txt)+'</div>');
         chat_window.animate({scrollTop: chat_window[0].scrollHeight});
     });
     say = function(txt){
@@ -15,11 +15,12 @@ var start_chat = function(hostname, name, room_id){
         var session = OT.initSession(data.api_key, data.session_id);
         session.connect(data.token, function(err){
         var publisher = OT.initPublisher($('.listener-all').get(0), {height:80, width:80, insertMode:"append", name:name, });
+        publisher.publishAudio(false);
         session.publish(publisher);
         session.on('streamCreated', function(event) {
             console.log('stream created');
             session.subscribe(event.stream, $('.listener-all').get(0), {insertMode: 'append', height:80, width:80,
-                                                                            audioVolume: 50})
+                                                                            audioVolume: 25})
         });
 
             console.log('connect error', err);

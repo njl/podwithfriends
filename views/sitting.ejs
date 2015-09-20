@@ -13,7 +13,7 @@
 				<!-- synced with the current time of the podcast being listened to -->
 				<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
 			</div>
-			<audio id="audio-player" preload controls >
+			<audio id="audio-player" preload  >
 			  <source src="<%= sitting.podcast.audio_url %>" type="audio/mpeg">
 			  Your browser does not support the audio tag.
 			</audio>
@@ -58,7 +58,7 @@
             </form>
 		</div>
 	</section>
-	<a href="#" class="button expand">Take me to another pod</a>
+	<a href="/" class="button expand">Take me to another pod</a>
 </main>
 <% } %>
 
@@ -66,7 +66,7 @@
 <script type="text/javascript">
 var ready = function(){
     var hostname=<%-JSON.stringify(process.env.HOSTNAME)%>;
-    var name=<%-JSON.stringify(current_user ? current_user.username : null)%>;
+    var name=<%-JSON.stringify(current_user ? current_user.username : 'Anonymous Coward')%>;
     var room=<%-JSON.stringify(room_id)%>;
     start_chat(hostname, name, room)
 };

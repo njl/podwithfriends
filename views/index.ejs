@@ -37,11 +37,18 @@
 		<% sittings.forEach(function(sitting) { %>
 			<li class="podcast-container">
 				<div class="podcast">
-					<div class="people-count"><%= sitting.user_ids.length %></div>
+					<div class="play_border">
+    					<div class="play_button"></div>
+    				</div>
+					<div class="people-count">Current listeners: <%= sitting.user_ids.length %></div>
+					<% if (!current_user) { %>
+					<div class="podcast-title"><%= sitting.podcast.title %></div>
+					<% } else { %>
 					<div class="podcast-title"><a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a></div>
+					<% } %> 
 					<div class="podcast-timeline">
 						<!-- synced with the current time of the podcast being listened to -->
-						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
+						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= sitting.elapsed %>"%>"></div>
 					</div>
 				</div>
 			</li>
