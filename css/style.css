@@ -2,7 +2,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-weight:300;
 }
-h1, h2, h3, p {
+h1, h2, h3, p, a{
 	font-weight:100;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -27,6 +27,11 @@ li {
 input {
 	padding:1em;
 	width:100%;
+}
+.button,
+.button:hover {
+	color:#333;
+	background: #fd0;
 }
 /* landing */
 .podcast-container {
@@ -53,7 +58,14 @@ input {
 	position:relative;
 }
 .users .row {
-	padding-bottom:2em;
+	padding:2em;
+	border-bottom:1px solid #eee;
+}
+.users .row:first-child {
+	padding-top:0;
+}
+.users .row:last-child {
+	border-bottom: 0;
 }
 .show {
 	border:1px solid #fd0;
@@ -70,7 +82,6 @@ input {
 	height:40px;
 	border-radius:50%;
 }
-
 footer {
 	position:absolute;
 	bottom:0;
