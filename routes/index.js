@@ -1,11 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var Sitting = require('../models/sitting');
 
 /* GET home page. */
 
 
 router.get('/', function(req, res, next) {
 
+<<<<<<< HEAD
 	var current_podcasts = [
 		{
 			"id":0,
@@ -46,6 +48,14 @@ router.get('/', function(req, res, next) {
 	];
 
   res.render('index', {current_podcasts: current_podcasts, current_user: req.user});
+=======
+	Sitting.find().exec(function(err, data) {
+		res.render('index', {sittings: data, current_user: req.user});
+	});
+
+
+
+>>>>>>> 383bd19f0cdc7f6aa229e09f6a50888de43b1c2a
 
 });
 

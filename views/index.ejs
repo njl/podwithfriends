@@ -1,5 +1,14 @@
 <header>
 	<h1><img src="img/logo-pwf-01.png" alt="" class="logo" /></h1>
+	<div>
+	<% if (current_user) { %>
+		<p><a href="/podcasts">List podcasts JSON</a></p>
+		<p><a href="/sittings/create/5143">Create new sitting for podcast "5143"</a></p>
+	<% } else { %>
+		<p><a href="/users/login">Login now</a></p>
+		<p><a href="/users/create">Register for an account</a></p>
+	<% } %>
+	</div>
 </header>
 <main>
 	<section class="search">
@@ -11,13 +20,14 @@
 	</section>
 	<section class="current">
 		<h3>What others are currently listening to</h3>
-		<% current_podcasts.forEach(function(podcast) { %>
+		<% sittings.forEach(function(sitting) { %>
 			<div class="podcast-container medium-3 columns">
 				<div class="podcast">
-					<div class="people-count"><%= podcast.total_listeners %></div>
+					<div class="people-count"><%= sitting.user_ids.length %></div>
 					<div class="podcast-timeline">
 						<!-- synced with the current time of the podcast being listened to -->
-						<div class="time-bar" id="<%=podcast.id%>" data-max="<%=podcast.length%>" data-val="<%=podcast.current_time%>"%>"></div>
+						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
+						<a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a>
 					</div>
 				</div>
 			</div>

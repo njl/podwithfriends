@@ -38,8 +38,13 @@ router.get('/:id', function(req, res, next) {
       next(err);
     }
     else {
+<<<<<<< HEAD
       model.users.push(req.user._id);
       model.save()
+=======
+      // model.user_ids.push(req.user._id);
+      // model.save()
+>>>>>>> 383bd19f0cdc7f6aa229e09f6a50888de43b1c2a
       res.render('sitting', {sitting: model, current_user: req.user});
     }
   });
