@@ -24,4 +24,3 @@ $timelineBars.each(function(){
 	$element = $(this);
 	progress($currentTime, $length, $element);
 });
-

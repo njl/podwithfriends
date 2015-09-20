@@ -1,15 +1,13 @@
 <% if (_.isEmpty(sitting)) { %>
   <h1>Sitting not found</h1>
 <% } else { %>
-  <h1><%= sitting.podcast.title %></h1>
-<% } %>
 
 <main>
 	<!-- show -->
 	<section class="show medium-4 columns">
 		<img class="show-logo" src="img/this.png"/>
 		<div class="show-info">
-			<p class="show-name">This American Life</p>
+			<p class="show-name"><%= sitting.podcast.title %></p>
 			<p class="show-episode">Episode 532 the Magic Words</p>
 			<input class="show-timeline" type="range" min="0" max="200" value="60" step="1">
 		</div>
@@ -69,3 +67,4 @@
 	</section>
 	<a href="#" class="button expand">Take me to another pod</a>
 </main>
+<% } %>
