@@ -28,6 +28,21 @@ input {
 	padding:1em;
 	width:100%;
 }
+.loader.off {
+	display:none;
+}
+.loader {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:rgba(255,255,255,.5);
+	z-index:100;
+}
+.loader .spinkit {
+	margin:50vh auto;
+}
 .logo{
 margin-top: -12px;
 margin-right: 40%;
@@ -166,17 +181,88 @@ p.nav-text{
 .show p {
 	text-align: center;
 }
-.listener-all li {
+.listener-one,
+.listener-video-container,
+.listener-name {
+	display:inline-block;
+	position:relative;
+}
+.listener-video-container {
+	margin-right:1em;
+}
+.listener-video {
+	width:160px;
+	height:120px;
+	background:#ccc;
+}
+.listener-video-container .spinkit {
+	position:relative;
+	top:-35px;
+}
+.listener-video-container .mute {
+	position:relative;
+	top:-70px;
+	left:120px;
+	height:40px;
+	width:40px;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-image: url('../img/mic.svg');
+}
+.listener-video-container .mute.on {
+	background-image: url('../img/mic-red.svg');
+}
+.listener-name {
+	position:absolute;
+	top:130px;
+	left:0;
+}
+.listener-avatar {
 	display:inline-block;
 	margin:0 1em;
 }
 .listener-avatar img {
 	height:40px;
-	height:40px;
 	border-radius:50%;
+}
+.text {
+	margin-top:1em;
+}
+.text-entered.inactive {
+	display:none;
+}
+.chat .listener-avatar,
+.chat input {
+	float:left;
 }
 footer {
 	position:absolute;
 	bottom:0;
 	text-align: center;
+}
+
+/* spinkit addition */
+
+.sk-wave {
+	height:30px;
+}
+.sk-three-bounce .sk-child {
+	width:15px;
+	height:15px;
+}
+
+.users .spinkit,
+.activity .spinkit {
+	vertical-align: middle;
+	margin:0;
+}
+
+.spinkit .sk-rect,
+.spinkit .sk-child {
+	background-color: #888;
+}
+
+.spinkit.inactive,
+.spinkit.inactive div {
+	display:none;
 }
