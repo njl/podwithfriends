@@ -136,10 +136,6 @@ p.nav-text{
 	height:200px;
 	border:1px solid #fd0;
 }
-.people-count:after {
-	/* will be replaced by pictures */
-	content:' current listeners';
-}
 .button,
 .button:hover {
 	color:#333;
@@ -187,10 +183,6 @@ footer {
 	padding:1em;
 	height:200px;
 	border:1px solid #fd0;
-}
-.people-count:after {
-	/* will be replaced by pictures */
-	content:' img of people';
 }
 .podcast-timeline, .show-timeline {
 	position:absolute;
