@@ -1949,7 +1949,7 @@ h2 {
   font-size: 1.6875rem; }
 
 h3 {
-  font-size: 1.375rem; }
+  font-size: 1.3rem; }
 
 h4 {
   font-size: 1.125rem; }
@@ -2119,7 +2119,7 @@ blockquote p {
     font-size: 2.3125rem; }
 
   h3 {
-    font-size: 1.6875rem; }
+    font-size: 1.3rem; }
 
   h4 {
     font-size: 1.4375rem; }
@@ -2637,3 +2637,12 @@ blockquote p {
       clear: none; }
     .large-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
+
+
+.logo{
+margin-top: 0;
+margin-right: 40%;
+margin-left: 40%;
+margin-bottom: -1em;
+width: 12%
+}
