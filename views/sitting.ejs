@@ -1,3 +1,9 @@
+<% if (_.isEmpty(sitting)) { %>
+  <h1>Sitting not found</h1>
+<% } else { %>
+  <h1><%= sitting.podcast.title %></h1>
+<% } %>
+
 <main>
 	<!-- show -->
 	<section class="show medium-4 columns">

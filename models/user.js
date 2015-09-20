@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-mongoose.connect('mongodb://localhost/podwithfriends');
+var db = mongoose.createConnection('mongodb://localhost/podwithfriends');
 
 var UserSchema = new mongoose.Schema({username: String,
                     _id: String, //email
@@ -16,4 +16,4 @@ UserSchema.methods.encryptPassword = function(){
     this.password = hash;
 };
 
-exports = module.exports = mongoose.model('User', UserSchema);
+exports = module.exports = db.model('User', UserSchema);

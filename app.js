@@ -47,8 +47,8 @@ app.use(layouts);
 // routing
 app.use('/', routes);
 app.use('/podcasts', podcasts);
-app.use('/users', users);
 app.use('/sittings', sittings);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
