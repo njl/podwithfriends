@@ -30,6 +30,7 @@
             dest=/opt/podwithfriends accept_hostkey=True force=True
       notify: restart podwithfriends
     - npm: path=/opt/podwithfriends state=present
+    - synchronize: src=../secrets/ dest=/opt/podwithfriends/secrets/
     #- supervisorctl: name=podwithfriends state=started
 
     #Map port
