@@ -16,11 +16,11 @@ var start_chat = function(hostname, name, room_id){
     socket.on('voice_token', function(data){
         var session = OT.initSession(data.api_key, data.session_id);
         session.connect(data.token, function(err){
-        var publisher = OT.initPublisher($('#me-on-video').get(0));
+        var publisher = OT.initPublisher($('.listener-all').get(0), {height:80, width:80, insertMode:"append", name:name, });
         session.publish(publisher);
         session.on('streamCreated', function(event) {
             console.log('stream created');
-            session.subscribe(event.stream, $('#others-on-video').get(0), {insertMode: 'append', 
+            session.subscribe(event.stream, $('.listener-all').get(0), {insertMode: 'append', height:80, width:80,
                                                                             audioVolume: 50})
         });
 
