@@ -20,7 +20,8 @@ var SittingSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'UserSchema'
   }],
-  user_ids: [String]
+  user_ids: [String],
+  started_at: Number
 });
 
 exports = module.exports = db.model('Sitting', SittingSchema);

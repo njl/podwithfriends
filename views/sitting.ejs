@@ -5,7 +5,7 @@
 <main>
 	<!-- show -->
 	<section class="show medium-4 columns">
-		<img class="show-logo" src="/images/this.png"/>
+		<img class="show-logo" src="<%= sitting.podcast.image_full_url %>"/>
 		<div class="show-info">
 			<p class="show-name"><%= sitting.podcast.show_title %></p>
 			<p class="show-episode"><%= sitting.podcast.title %></p>
@@ -13,6 +13,10 @@
 				<!-- synced with the current time of the podcast being listened to -->
 				<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
 			</div>
+			<audio id="audio-player" preload controls >
+			  <source src="<%= sitting.podcast.audio_url %>" type="audio/mpeg">
+			  Your browser does not support the audio tag.
+			</audio>
 		</div>
 	</section>
 	<!-- people -->
@@ -62,7 +66,7 @@
 <script type="text/javascript">
 var ready = function(){
     var hostname=<%-JSON.stringify(process.env.HOSTNAME)%>;
-    var name=<%-JSON.stringify(current_user.username)%>;
+    var name=<%-JSON.stringify(current_user ? current_user.username : null)%>;
     var room=<%-JSON.stringify(room_id)%>;
     start_chat(hostname, name, room)
 };

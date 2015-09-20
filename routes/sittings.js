@@ -42,16 +42,38 @@ router.get('/:id', function(req, res, next) {
       next(err);
     }
     else {
+      res.render('sitting', {sitting: model, current_user: req.user, room_id:req.params.id});
+    }
+  });
+});
+
+router.get('/:id/listen', function(req, res, next) {
+  Sitting.findById(req.params.id, function(err, model) {
+    if (err) {
+      err.status = 404;
+      next(err);
+    }
+    else {
       if (req.user) {
         model.user_ids = _.uniq(_.union(model.user_ids, [req.user._id]));
       }
+
+      // determine the playback start-at offset
+      var startAt = 0;
+      if (!model.started_at) {
+        model.started_at = new Date().getTime();
+      }
+      else {
+        startAt = (new Date().getTime()) - model.started_at;
+      }
+
       model.save(function(err) {
         if (err) {
           err.status = 500;
           next(err);
         }
         else {
-          res.render('sitting', {sitting: model, current_user: req.user, room_id:req.params.id});
+          res.json('sitting', {play_offset: startAt});
         }
       });
     }
