@@ -28,11 +28,22 @@ $timelineBars.each(function(){
 $( document ).ready(function() {
     $audio = $('#audio-player');
     if ($audio.length > 0) {
-        $.get(window.location + '/listen', function(data) {
-            var offsetMs = data.play_offset;
-            console.log('starting at:', offsetMs);
-            $audio[0].currentTime = (offsetMs / 1000);
-            $audio[0].play();
-        });
+        var isPlaying = false;
+        var startPlayback = function() {
+            if (!isPlaying) {
+                isPlaying = true;
+                $.get(window.location + '/listen', function(data) {
+                    var offsetMs = data.play_offset;
+                    console.log('starting at:', offsetMs);
+                    $audio[0].currentTime = (offsetMs / 1000);
+                    $audio[0].play();
+                });
+            }
+        }
+
+        $audio.on('canplaythrough', startPlayback);
+        if ($audio[0].readyState > 3) {
+          startPlayback();
+        }
     }
 });
