@@ -23,6 +23,7 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "pmpsdk": "0.0.7",
+    "request": "^2.62.0",
     "serve-favicon": "~2.3.0",
     "underscore": "^1.8.3"
   }

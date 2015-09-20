@@ -7,15 +7,16 @@ var pmp = require('../lib/pmp');
 /* GET podcasts listing. */
 router.get('/', function(req, res, next) {
   var searchText = req.query.q || null;
+  var searchPage = req.query.p || 1;
 
   // query params (with defaults)
-  pmp.query(searchText, function(err, data) {
+  pmp.query(searchText, searchPage, function(err, data) {
     if (err) {
       err.status = 500;
       next(err);
     }
     else {
-      res.render('podcasts', data);
+      res.json(data);
     }
   });
 
