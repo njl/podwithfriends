@@ -1,0 +1,25 @@
+<header>
+  <h1><img src="img/logo-pwf-01.png" alt="" class="logo" /></h1>
+</header>
+<main>
+  <section class="search">
+    <h3>Anything you want to listen to?</h3>
+    <div class="medium-centered medium-6 columns">
+      <form method="GET" action="/search">
+        <input name="q" type="text" placeholder="Some awesome show I heard about from friends" value="<%= query %>"/>
+      </form>
+    </div>
+  </section>
+  <section class="current">
+    <h3>Search results:</h3>
+    Total = <%= data.total %>
+    Page = <%= data.page %>
+    <ul>
+    <% _.each(data.podcasts, function(podcast) { %>
+      <li>
+        <b><%= podcast.title %></b>
+      </li>
+    <% }) %>
+    </ul>
+  </section>
+</main>
