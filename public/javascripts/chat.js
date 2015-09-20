@@ -19,7 +19,7 @@ var start_chat = function(hostname, name, room_id){
         session.on('streamCreated', function(event) {
             console.log('stream created');
             session.subscribe(event.stream, $('.listener-all').get(0), {insertMode: 'append', height:80, width:80,
-                                                                            audioVolume: 50})
+                                                                            audioVolume: 25})
         });
 
             console.log('connect error', err);

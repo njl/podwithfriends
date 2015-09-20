@@ -138,7 +138,7 @@ p.nav-text{
 }
 .people-count:after {
 	/* will be replaced by pictures */
-	content:' img of people';
+	content:' current listeners';
 }
 .button,
 .button:hover {
