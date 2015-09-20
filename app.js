@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var layouts = require('express-ejs-layouts');
 var envdir = require('envdir');
+var passport = require('passport');
+var express_session = require('express-session');
+
 
 // global includes
 GLOBAL._ = require('underscore');
@@ -32,6 +35,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(express_session({ secret: process.env.SESSION_SECRET}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
