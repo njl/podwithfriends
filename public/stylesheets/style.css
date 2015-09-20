@@ -177,7 +177,9 @@ footer {
 	text-align: center;
 }
 
-
+section.show {
+	text-align:center;
+}
 .podcast {
 	position: relative;
 	padding:1em;
