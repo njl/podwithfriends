@@ -52,3 +52,14 @@
 	<a href="#" class="button expand">Take me to another pod</a>
 </main>
 <% } %>
+
+
+<script type="text/javascript">
+var ready = function(){
+    var hostname=<%-JSON.stringify(process.env.HOSTNAME)%>;
+    var name=<%-JSON.stringify(current_user.username)%>;
+    var room=<%-JSON.stringify(room_id)%>;
+    start_chat(hostname, name, room)
+};
+document.addEventListener('DOMContentLoaded', ready, false);
+</script>

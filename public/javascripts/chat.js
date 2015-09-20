@@ -1,4 +1,4 @@
-$(document).ready(function(){
+var start_chat = function(hostname, name, room_id){
     var socket = io.connect('http://'+hostname);
     socket.on('joined', function(data){
         console.log('joined '+data.room);
@@ -6,9 +6,6 @@ $(document).ready(function(){
     socket.on('said', function(data){
         console.log(data.user+': '+data.txt);
     });
-    join_room = function(name, room_id){
-        socket.emit('join', {name:name, room_id:room_id});
-    }
     say = function(txt){
         socket.emit('say', txt);
     }
@@ -31,4 +28,5 @@ $(document).ready(function(){
         });
         window.session = session;
     });
-});
+    socket.emit('join', {name:name, room_id:room_id})
+};

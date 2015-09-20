@@ -51,7 +51,7 @@ router.get('/:id', function(req, res, next) {
           next(err);
         }
         else {
-          res.render('sitting', {sitting: model, current_user: req.user});
+          res.render('sitting', {sitting: model, current_user: req.user, room_id:req.params.id});
         }
       });
     }
