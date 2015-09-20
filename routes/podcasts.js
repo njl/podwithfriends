@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// init PMP
-var pmp = require('../lib/pmp');
+// init podcast source api
+// var api = require('../lib/audiosearch');
+var api = require('../lib/pmp');
 
 /* GET podcasts listing. */
 router.get('/', function(req, res, next) {
@@ -10,7 +11,7 @@ router.get('/', function(req, res, next) {
   var searchPage = req.query.p || 1;
 
   // query params (with defaults)
-  pmp.query(searchText, searchPage, function(err, data) {
+  api.query(searchText, searchPage, function(err, data) {
     if (err) {
       err.status = 500;
       next(err);
@@ -22,8 +23,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* FETCH a single podcast. */
-router.get('/:guid', function(req, res, next) {
-  pmp.fetch(req.params.guid, function(err, data) {
+router.get('/:id', function(req, res, next) {
+  pmp.fetch(req.params.id, function(err, data) {
     if (err) {
       err.status = 500;
       next(err);
@@ -32,7 +33,6 @@ router.get('/:guid', function(req, res, next) {
       res.json(data || null);
     }
   });
-
 });
 
 module.exports = router;
