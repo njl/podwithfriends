@@ -204,3 +204,8 @@ footer {
 	background:#81B4B9;
 	height:10px;
 }
+
+.listener-all .OT_mini {
+    float: left;
+    margin: 10px 5px;
+}
