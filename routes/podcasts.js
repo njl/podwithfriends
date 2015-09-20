@@ -2,8 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // init podcast source api
-// var api = require('../lib/audiosearch');
-var api = require('../lib/pmp');
+var api = require('../lib/audiosearch'); // require('../lib/pmp');
 
 /* GET podcasts listing. */
 router.get('/', function(req, res, next) {
@@ -24,7 +23,7 @@ router.get('/', function(req, res, next) {
 
 /* FETCH a single podcast. */
 router.get('/:id', function(req, res, next) {
-  pmp.fetch(req.params.id, function(err, data) {
+  api.fetch(req.params.id, function(err, data) {
     if (err) {
       err.status = 500;
       next(err);

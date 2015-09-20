@@ -24,3 +24,11 @@
 		<% }); %>
 	</section>
 </main>
+
+<% if (current_user) { %>
+<p><a href="/podcasts">List podcasts JSON</a></p>
+<p><a href="/sittings/create/5143">Create new sitting for podcast "5143"</a></p>
+<% } else { %>
+<p><a href="/users/login">Login now</a></p>
+<p><a href="/users/create">Register for an account</a></p>
+<% } %>

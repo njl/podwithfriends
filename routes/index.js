@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
 		}
 	];
 
-  res.render('index', {current_podcasts: current_podcasts, req:req});
+  res.render('index', {current_podcasts: current_podcasts, current_user: req.user});
 
 });
 
