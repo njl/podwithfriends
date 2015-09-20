@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // init podcast source api
-var api = require('../lib/audiosearch'); // require('../lib/pmp');
+var api = require('../lib/api');
 
 /* GET podcasts listing. */
 router.get('/', function(req, res, next) {

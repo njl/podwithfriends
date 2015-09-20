@@ -3,7 +3,7 @@
 </header>
 <main>
   <section class="search">
-    <h3>Anything you want to listen to?</h3>
+    <h3>Anything you want to listen to?</h3>g
     <div class="medium-centered medium-6 columns">
       <form method="GET" action="/search">
         <input name="q" type="text" placeholder="Some awesome show I heard about from friends" value="<%= query %>"/>
@@ -17,7 +17,7 @@
     <ul>
     <% _.each(data.podcasts, function(podcast) { %>
       <li>
-        <b><%= podcast.title %></b>
+        <a href="/sittings/create/<%= podcast.xid %>"><%= podcast.title %></a>
       </li>
     <% }) %>
     </ul>
