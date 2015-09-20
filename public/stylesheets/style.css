@@ -127,6 +127,9 @@ p.nav-text{
 	background: #fd0;
 }
 /* landing */
+.search h3 {
+	text-align:center;
+}
 .podcast-container {
 	padding:1em;
 }
