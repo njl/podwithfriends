@@ -21,6 +21,7 @@ envdir.core.environment.load('secrets');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var podcasts = require('./routes/podcasts');
+var sittings = require('./routes/sittings');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use(layouts);
 app.use('/', routes);
 app.use('/podcasts', podcasts);
 app.use('/users', users);
+app.use('/sittings', sittings);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
