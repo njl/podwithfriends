@@ -192,13 +192,13 @@ footer {
 	/* will be replaced by pictures */
 	content:' img of people';
 }
-.podcast-timeline {
+.podcast-timeline, .show-timeline {
 	position:absolute;
 	bottom:0px;
 	left:0px;
 	width:100%;
 }
-.podcast-timeline .time-bar{
+.podcast-timeline .time-bar, .show-timeline .time-bar{
 	position:relative;
 	width:0%;
 	background:#81B4B9;

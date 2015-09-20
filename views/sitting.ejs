@@ -9,7 +9,10 @@
 		<div class="show-info">
 			<p class="show-name"><%= sitting.podcast.show_title %></p>
 			<p class="show-episode"><%= sitting.podcast.title %></p>
-			<input class="show-timeline" type="range" min="0" max="200" value="60" step="1">
+			<div class="show-timeline">
+				<!-- synced with the current time of the podcast being listened to -->
+				<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
+			</div>
 		</div>
 	</section>
 	<!-- people -->
@@ -18,10 +21,22 @@
 			<h3>People listening to this episode</h3>
 			<% sitting.users.forEach(function(user) { %>
 			<li class="listener-grid-li" id="<%=user._id%>">
-				<div class="listener-avatar">
-					<!--<img src="/images/avatar1.png"/>-->
+				<div class="listener-video-container">
+					<div class="listener-video">
+						<!-- stream video will go here -->
+					</div>
+					<!-- spin wave: add inactive class when listener is not using audio chat -->
+					<div class="spinkit sk-wave">
+						<div class="sk-rect sk-rect1"></div>
+						<div class="sk-rect sk-rect2"></div>
+						<div class="sk-rect sk-rect3"></div>
+						<div class="sk-rect sk-rect4"></div>
+						<div class="sk-rect sk-rect5"></div>
+					</div>
+					<div class="mute on"></div>
 				</div>
-				<div class="listener-name"><%=user.username%></div>
+				<!--<div class="listener-name"><%=user.username%></div>-->
+				<div class="listener-name">user</div>
 			</li>
 			<% }); %>
 		</ul>

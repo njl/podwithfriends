@@ -1,7 +1,6 @@
 $(document).foundation();
 
-$timelineBars = $('.podcast-timeline .time-bar');
-		
+$timelineBars = $('.time-bar');
 
 
 function progress(curTime, timetotal, $element) {
