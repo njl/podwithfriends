@@ -1,3 +1,28 @@
-<h1>Hello, world!</h1>
+<header>
+	<h1>Pod with Friends</h1>
+</header>
+<main>
+	<section class="search">
+		<h3>Anything you want to listen to?</h3>
+		<div class="medium-centered medium-6 columns">
+			<input type="text" placeholder="Some awesome show I heard about from friends" />
+		</div>
+		<!-- <a id="submit" href="#" class="button">Take me there</a> -->
+	</section>
+	<section class="current">
+		<h3>What others are currently listening to</h3>
+		<% current_podcasts.forEach(function(podcast) { %>
 
-<p><%= process.env.PMP_HOST %></p>
+			<div class="podcast-container medium-3 columns">
+				<div class="podcast">
+					<div class="people-count"><%= podcast.total_listeners %></div>
+					<div class="podcast-timeline">
+						<!-- synced with the current time of the podcast being listened to -->
+						<input type="range" min="0" max="<%=podcast.length%>" value="<%=podcast.current_time%>" step="1">
+					</div>
+				</div>
+			</div>
+
+		<% }); %>
+	</section>
+</main>

@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
 }
-
-a {
-  color: #00B7FF;
+h1, h2, h3 {
+	font-weight:100;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+header,
+main,
+section {
+	padding:2em;
+}
+input {
+	padding:1em;
+	width:100%;
+}
+.podcast-container {
+	padding:1em;
+}
+.podcast {
+	position: relative;
+	padding:1em;
+	height:200px;
+	border:1px solid #fd0;
+}
+.people-count {
+	/*position: absolute;*/
+}
+.people-count:after {
+	/* will be replaced by pictures */
+	content:' img of people';
+}
+.podcast-timeline input {
+	position: relative;
+	top:100px;
+	width:100%;
 }
