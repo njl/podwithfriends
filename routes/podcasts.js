@@ -19,6 +19,19 @@ router.get('/', function(req, res, next) {
       res.json(data);
     }
   });
+});
+
+/* FETCH a single podcast. */
+router.get('/:guid', function(req, res, next) {
+  pmp.fetch(req.params.guid, function(err, data) {
+    if (err) {
+      err.status = 500;
+      next(err);
+    }
+    else {
+      res.json(data || null);
+    }
+  });
 
 });
 
