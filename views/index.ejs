@@ -17,11 +17,10 @@
 					<div class="people-count"><%= podcast.total_listeners %></div>
 					<div class="podcast-timeline">
 						<!-- synced with the current time of the podcast being listened to -->
-						<input type="range" min="0" max="<%=podcast.length%>" value="<%=podcast.current_time%>" step="1">
+						<div class="time-bar" id="<%=podcast.id%>" data-max="<%=podcast.length%>" data-val="<%=podcast.current_time%>"%>"></div>
 					</div>
 				</div>
 			</div>
-
 		<% }); %>
 	</section>
 </main>

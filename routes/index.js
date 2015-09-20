@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
 
 	var current_podcasts = [
 		{
+			"id":0,
 			"title": "This American Life",
 			"episode": "Episode Name",
 			"total_listeners": "8",
@@ -14,6 +15,7 @@ router.get('/', function(req, res, next) {
 
 		},
 		{
+			"id":1,
 			"title": "This American Life",
 			"episode": "Episode Name",
 			"total_listeners": "4",
@@ -22,6 +24,7 @@ router.get('/', function(req, res, next) {
 
 		},
 		{
+			"id":2,
 			"title": "This American Life",
 			"episode": "Episode Name",
 			"total_listeners": "6",
@@ -30,6 +33,7 @@ router.get('/', function(req, res, next) {
 
 		},
 		{
+			"id":3,
 			"title": "This American Life",
 			"episode": "Episode Name",
 			"total_listeners": "12",
