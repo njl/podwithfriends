@@ -31,6 +31,7 @@
       notify: restart podwithfriends
     - npm: path=/opt/podwithfriends state=present
     - synchronize: src=../secrets/ dest=/opt/podwithfriends/secrets/
+    - template: src=hosts dest=/opt/podwithfriends/secrets/HOSTNAME
     #- supervisorctl: name=podwithfriends state=started
 
     #Map port
