@@ -25,53 +25,63 @@
 		<section class="users medium-8 columns">
 			<ul class="listener-all row">
 				<h3>People listening to this episode</h3>
-				<li>
-					<div class="listener-avatar">
-						<img src="img/avatar1.png"/>
+				<li class="listener-one">
+					<div class="listener-video-container">
+						<div class="listener-video">
+							<!-- stream video will go here -->
+						</div>
+						<!-- spin wave: add inactive class when listener is not using audio chat -->
+						<div class="spinkit sk-wave">
+							<div class="sk-rect sk-rect1"></div>
+							<div class="sk-rect sk-rect2"></div>
+							<div class="sk-rect sk-rect3"></div>
+							<div class="sk-rect sk-rect4"></div>
+							<div class="sk-rect sk-rect5"></div>
+						</div>
+						<div class="mute on"></div>
 					</div>
-					<div class="listener-name">Wino</div>
+					<div class="listener-name">Listener Name 1</div>
 				</li>
-				<li>
-					<div class="listener-avatar">
-						<img src="img/avatar2.png"/>
+				<li class="listener-one">
+					<div class="listener-video-container">
+						<div class="listener-video">
+							<!-- stream video will go here -->
+						</div>
+						<!-- spin wave: add inactive class when listener is not using audio chat -->
+						<div class="spinkit sk-wave">
+							<div class="sk-rect sk-rect1"></div>
+							<div class="sk-rect sk-rect2"></div>
+							<div class="sk-rect sk-rect3"></div>
+							<div class="sk-rect sk-rect4"></div>
+							<div class="sk-rect sk-rect5"></div>
+						</div>
+						<div class="mute on"></div>
 					</div>
-					<div class="listener-name">Yuno</div>
-				</li>
-				<li>
-					<div class="listener-avatar">
-						<img src="img/avatar3.png"/>
-					</div>
-					<div class="listener-name">Blue</div>
-				</li>
-				<li>
-					<div class="listener-avatar">
-						<img src="img/avatar4.png"/>
-					</div>
-					<div class="listener-name">Saddy</div>
+					<div class="listener-name">Listener Name 1</div>
 				</li>
 			</ul>
 			<!-- user activity -->
 			<div class="activity row">
-				<h3>Chat</h3>
 				<div class="chat-block">
-					<div class="listener-avatar">
+					<!-- avatar -->
+					<div class='listener-avatar'>
 						<img src="img/avatar2.png"/>
 					</div>
-					<!-- TODO -->
-					<div class="audio-chat">
-						<div class="mute">mute button</div>
-					</div>
-					<div class="text-chat">
-						<div class="loader">... a loader indicating when the user is typing</div>
-						<div class="text">actual text once user posts</div>
+					<!-- text chat -->
+					<div class="text">
+						<!-- bounce: add inactive class when text is not being typed -->
+					    <div class="spinkit sk-three-bounce">
+							<div class="sk-child sk-bounce1"></div>
+							<div class="sk-child sk-bounce2"></div>
+							<div class="sk-child sk-bounce3"></div>
+					    </div>
+					    <!-- remove inactive class when text has been entered -->
+						<div class="text-entered inactive">Hi! I like this episode.</div>
 					</div>
 				</div>
 			</div>
 			<div class="chat row">
-				<div class="small-2 columns listener-avatar">
-					<img src="img/avatar2.png"/>
-				</div>
-				<input class="small-10 columns" type="text" placeholder="What are you thinking" />
+				<input type="text" placeholder="What are you thinking" />
 			</div>
 		</section>
 		<a href="#" class="button expand">Take me to another pod</a>
