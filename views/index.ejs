@@ -22,17 +22,19 @@
 	</section>
 	<section class="current">
 		<h3>What others are currently listening to</h3>
+		<ul class="medium-block-grid-4">
 		<% sittings.forEach(function(sitting) { %>
-			<div class="podcast-container medium-3 columns">
+			<li class="podcast-container">
 				<div class="podcast">
 					<div class="people-count"><%= sitting.user_ids.length %></div>
+					<div class="podcast-title"><a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a></div>
 					<div class="podcast-timeline">
 						<!-- synced with the current time of the podcast being listened to -->
 						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
-						<a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a>
 					</div>
 				</div>
-			</div>
+			</li>
 		<% }); %>
+		</ul>
 	</section>
 </main>

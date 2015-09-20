@@ -37,6 +37,11 @@ input {
 .podcast-container {
 	padding:1em;
 }
+.podcast-container .podcast-title {
+	text-align:center;
+	margin-top:25px;
+}
+
 .podcast {
 	position: relative;
 	padding:1em;
