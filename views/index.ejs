@@ -1,14 +1,17 @@
+<% if (!current_user) { %>
+	<div class="login">
+		<p class="nav-text"><a href="/users/login">Log in</a></p>
+	</div>
+	<div class="login">
+		<p class="nav-text"><a href="/users/create">Sign up</a></p>
+	</div>
+<% } else { %>
+	<p><a href="/podcasts">List podcasts JSON</a></p>
+	<p><a href="/sittings/create/5143">Create new sitting for podcast "5143"</a></p>
+<% } %>
+
 <header>
 	<h1><img src="/images/logo-pwf-01.png" alt="" class="logo" /></h1>
-	<div>
-	<% if (current_user) { %>
-		<p><a href="/podcasts">List podcasts JSON</a></p>
-		<p><a href="/sittings/create/5143">Create new sitting for podcast "5143"</a></p>
-	<% } else { %>
-		<p><a href="/users/login">Login now</a></p>
-		<p><a href="/users/create">Register for an account</a></p>
-	<% } %>
-	</div>
 </header>
 <main>
 	<section class="search">
