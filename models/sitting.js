@@ -16,7 +16,14 @@ var SittingSchema = new mongoose.Schema({
     image_thumb_url: String,
     image_full_url: String
   },
+<<<<<<< HEAD
+  users: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserSchema'
+  }]
+=======
   user_ids: [String]
+>>>>>>> 383bd19f0cdc7f6aa229e09f6a50888de43b1c2a
 });
 
 exports = module.exports = db.model('Sitting', SittingSchema);

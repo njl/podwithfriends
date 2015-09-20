@@ -38,9 +38,18 @@ router.get('/:id', function(req, res, next) {
       next(err);
     }
     else {
-      // model.user_ids.push(req.user._id);
-      // model.save()
-      res.render('sitting', {sitting: model, current_user: req.user});
+      if (req.user) {
+        model.user_ids = _.uniq(_.union(model.user_ids, [req.user._id]));
+      }
+      model.save(function(err) {
+        if (err) {
+          err.status = 500;
+          next(err);
+        }
+        else {
+          res.render('sitting', {sitting: model, current_user: req.user});
+        }
+      });
     }
   });
 });
