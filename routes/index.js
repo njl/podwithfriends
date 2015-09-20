@@ -39,7 +39,8 @@ router.get('/', function(req, res, next) {
 		}
 	];
 
-  res.render('index', {current_podcasts: current_podcasts});
+  res.render('index', {current_podcasts: current_podcasts, req:req});
+
 });
 
 module.exports = router;

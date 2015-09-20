@@ -6,29 +6,18 @@ var pmp = require('../lib/pmp');
 
 /* GET podcasts listing. */
 router.get('/', function(req, res, next) {
+  var searchText = req.query.q || null;
+  var searchPage = req.query.p || 1;
 
   // query params (with defaults)
-  var params = {
-    profile: 'story',
-    has:     'audio,image',
-    limit:   req.query.limit || 10 ,
-    text:    req.query.text || null
-  };
-
-  // ask the pmp
-  pmp.sdk.queryDocs(params, function(query, resp) {
-    var formatted = {
-      total: query.total(),
-      podcasts: []
-    };
-
-    if (query.items && query.items.length) {
-      query.items.forEach(function(story) {
-        formatted.podcasts.push(pmp.formatStory(story));
-      });
+  pmp.query(searchText, searchPage, function(err, data) {
+    if (err) {
+      err.status = 500;
+      next(err);
     }
-
-    res.json(formatted);
+    else {
+      res.json(data);
+    }
   });
 
 });
