@@ -3,16 +3,14 @@ var start_chat = function(hostname, name, room_id){
     socket.on('joined', function(data){
         console.log('joined '+data.room);
     });
+    var chat_window = $('.text-chat');
     socket.on('said', function(data){
-        console.log(data.user+': '+data.txt);
+        chat_window.append('<div class="text"><strong>'+data.user+'</strong> '+data.txt+'</div>');
+        chat_window.animate({scrollTop: chat_window[0].scrollHeight});
     });
     say = function(txt){
         socket.emit('say', txt);
     }
-    socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', { my: 'data' });
-            });
     socket.on('voice_token', function(data){
         var session = OT.initSession(data.api_key, data.session_id);
         session.connect(data.token, function(err){
@@ -27,6 +25,12 @@ var start_chat = function(hostname, name, room_id){
             console.log('connect error', err);
         });
         window.session = session;
+    });
+    $("#chat-input").on("submit", function(ev){
+        ev.preventDefault();
+        var target = $('#chat-input input');
+        say(target.val());
+        target.val("");
     });
     socket.emit('join', {name:name, room_id:room_id})
 };
