@@ -28,6 +28,10 @@ input {
 	padding:1em;
 	width:100%;
 }
+
+.search{
+	background-color: #E6E6E6;
+}
 .button,
 .button:hover {
 	color:#333;
