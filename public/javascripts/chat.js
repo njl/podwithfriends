@@ -5,7 +5,7 @@ var start_chat = function(hostname, name, room_id){
     });
     var chat_window = $('.text-chat');
     socket.on('said', function(data){
-        chat_window.append('<div class="text"><strong>'+data.user+'</strong> '+data.txt+'</div>');
+        chat_window.append('<div class="text"><strong>'+_.escape(data.user)+'</strong> '+_.escape(data.txt)+'</div>');
         chat_window.animate({scrollTop: chat_window[0].scrollHeight});
     });
     say = function(txt){
