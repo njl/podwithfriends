@@ -44,7 +44,7 @@
 					<div class="podcast-title"><a href="/sittings/<%= sitting._id %>"><%= sitting.podcast.title %></a></div>
 					<div class="podcast-timeline">
 						<!-- synced with the current time of the podcast being listened to -->
-						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= 10 %>"%>"></div>
+						<div class="time-bar" id="<%=sitting.podcast.xid%>" data-max="<%=sitting.podcast.duration%>" data-val="<%= sitting.elapsed %>"%>"></div>
 					</div>
 				</div>
 			</li>
