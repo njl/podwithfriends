@@ -21,6 +21,7 @@
     "mongodb": "^2.0.43",
     "mongoose": "^4.1.7",
     "morgan": "~1.6.1",
+    "opentok": "^2.3.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "pmpsdk": "0.0.7",
