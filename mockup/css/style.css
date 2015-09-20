@@ -38,3 +38,43 @@ input {
 	top:100px;
 	width:100%;
 }
+.button,
+.button:hover {
+	color:#333;
+	background: #fd0;
+}
+
+/* show page */
+.users {
+	position:relative;
+}
+.users .row {
+	padding:2em;
+	border-bottom:1px solid #eee;
+}
+.users .row:first-child {
+	padding-top:0;
+}
+.users .row:last-child {
+	border-bottom: 0;
+}
+.show {
+	border:1px solid #fd0;
+}
+.show p {
+	text-align: center;
+}
+.listener-all li {
+	display:inline-block;
+	margin:0 1em;
+}
+.listener-avatar img {
+	height:40px;
+	height:40px;
+	border-radius:50%;
+}
+footer {
+	position:absolute;
+	bottom:0;
+	text-align: center;
+}
