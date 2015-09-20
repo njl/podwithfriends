@@ -15,6 +15,7 @@ var start_chat = function(hostname, name, room_id){
         var session = OT.initSession(data.api_key, data.session_id);
         session.connect(data.token, function(err){
         var publisher = OT.initPublisher($('.listener-all').get(0), {height:80, width:80, insertMode:"append", name:name, });
+        publisher.publishAudio(false);
         session.publish(publisher);
         session.on('streamCreated', function(event) {
             console.log('stream created');
